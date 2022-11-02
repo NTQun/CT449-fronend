@@ -17,12 +17,17 @@
                 <div class="mt-3 row justify-content-around align-items-center">
                     <button class="btn btn-sm btn-primary" @click="refreshList()">
                         <i class="fas fa-redo"></i> Làm mới
-                    </button>
-
-                    <button class="btn btn-sm btn-success" @click="goToAddContact">
-                        <i class="fas fa-plus"></i> Thêm mới
-                    </button>
-
+                    </button>                    
+                
+                    <router-link :to="{
+                        name: 'AddContact',
+                        }">
+                        <button class="btn btn-sm btn-success" @click="goToAddContact">
+                            <i class="fas fa-plus"></i>
+                                thêm mới
+                        </button>
+                    </router-link>
+        
                     <button
                         class="btn btn-sm btn-danger"
                         @click="removeAllContacts"
@@ -38,6 +43,7 @@
                     Chi tiết Liên hệ
                     <i class="fas fa-address-card"></i>
                 </h4>
+                
                 <ContactCard :contact="activeContact" />
 
                 <router-link
